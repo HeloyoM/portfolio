@@ -28,10 +28,157 @@
   color: #61dafb;
 }
 
+/* components/AnimatedArrows.css */
+
+.arrows-container {
+  /* Inherits most layout from MUI sx prop */
+  /* These are for visual debugging if needed */
+  /* border: 1px dashed red; */
+}
+
+/* --- Central Vertical Line (Optional but good for origin) --- */
+.central-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 0;
+  /* Start hidden */
+  background-color: #007bff;
+  /* Arrow color */
+  transition: height 1s ease-out, opacity 1s ease-out;
+  opacity: 0;
+}
+
+.central-line.visible {
+  height: 50px;
+  /* Grow downwards from text */
+  opacity: 1;
+}
+
+/* --- Growing Horizontal Arrow Lines --- */
+.growing-arrow-line {
+  position: absolute;
+  top: 50px;
+  /* Start where the central line ends */
+  height: 2px;
+  /* Thickness of the line */
+  background-color: #007bff;
+  /* Arrow color */
+  opacity: 0;
+  transition: width 1.5s ease-out, opacity 0.5s ease-out 0.5s;
+  /* Animate width longer, delay opacity */
+  /* Use a transform to ensure growth from center if using fixed widths or percentages */
+  /* Initial state */
+  width: 0;
+}
+
+.left-line {
+  left: 50%;
+  /* Start from the center */
+  transform-origin: right center;
+  /* Grow to the left from the right edge */
+  transform: translateX(0%);
+  /* Compensate for growth origin if needed */
+}
+
+.right-line {
+  right: 50%;
+  /* Start from the center */
+  transform-origin: left center;
+  /* Grow to the right from the left edge */
+  transform: translateX(0%);
+  /* Compensate for growth origin if needed */
+}
+
+
+/* --- Arrow Heads (Triangles) --- */
+.arrow-head {
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  position: absolute;
+  /* These will be positioned relative to their parent .growing-arrow-line */
+  opacity: 0;
+  transition: opacity 0.5s ease-out 1s;
+  /* Appear after line has grown a bit */
+}
+
+.left-head {
+  border-right: 15px solid #007bff;
+  /* Left-pointing triangle */
+  left: 0;
+  /* Position at the left end of its parent line */
+  top: 50%;
+  transform: translate(-100%, -50%);
+  /* Move outside the line, center vertically */
+}
+
+.right-head {
+  border-left: 15px solid #007bff;
+  /* Right-pointing triangle */
+  right: 0;
+  /* Position at the right end of its parent line */
+  top: 50%;
+  transform: translate(100%, -50%);
+  /* Move outside the line, center vertically */
+}
+
+
+/* --- Animation State (.visible class) --- */
+.central-line.visible {
+  height: 50px;
+  /* Adjust this if you want a longer initial vertical drop */
+  opacity: 1;
+}
+
+.growing-arrow-line.visible {
+  opacity: 1;
+  /* Adjust these widths based on the distance from the center point to the middle of your cards */
+  /* You will need to inspect and fine-tune these pixel values */
+  /* Example: if cards are 300px wide and 30px gap, total width 660px for cards
+     Max-width of arrows-container is 800px.
+     Center of card is at ~ (300/2) + 30 = 180px from edge of card container.
+     So each line needs to extend from center ~ 800/2 = 400px - (card center offset) */
+  width: calc(50% - 150px);
+  /* Example: 50% of container - half card width - half gap */
+  /* A more robust way would be to set a fixed pixel width that reaches the card */
+  /* width: 250px; */
+  /* Example pixel width, adjust this! */
+}
+
+.left-line.visible {
+  width: 550px;
+  /* Adjust this exact pixel value */
+  /* For left line, if you use transform-origin: right center, width works.
+     If you use left: 50% and animate width, you might need left: calc(50% - YOUR_WIDTH); */
+}
+
+.right-line.visible {
+  width: 550px;
+  /* Adjust this exact pixel value */
+}
+
+
+.arrow-head.visible {
+  opacity: 1;
+}
+
+/* --- Final positioning of the whole arrows-container relative to cards --- */
+/* The top: 50px on .growing-arrow-line positions the horizontal lines
+   relative to the .arrows-container.
+   The total height of .arrows-container should accommodate the vertical drop
+   and the horizontal lines.
+   You'll need to fine-tune the margin-top on the cards-container in App.js
+   to make sure the arrows meet the cards correctly. */
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }

@@ -1,0 +1,84 @@
+{
+    "hero": {
+        "title": "Wondering how to set up a new website?",
+        "description": "you'r not alone!",
+        "button": "learn more",
+        "bottom_line": "After a review here, you won't want to check anywhere else"
+    },
+    "projects": {
+        "title": "Projects",
+        "solve": {
+            "name": "Solve - the block buster",
+            "line_1": "software for human organiational challenges",
+            "line_2": "SOLVE is a SaaS platform to anticipate and solve sensitive human organizational problems while ensuring individual and team goals are achieved",
+            "line_3": "SOLVE offers a reliable and consistent experience to deliver immediate value around profitability, operational efficiency, and time.",
+            "tech": {
+                "title": "Set of technologys",
+                "front": {
+                    "name": "Frontend (see more)",
+                    "line_1": "Single Page Applications (SPA) Capability",
+                    "line_2": "Highly Responsive UI - Immediate feedback to user interactions, no full page reloads.",
+                    "line_3": "Reduced Server Load - More processing happens client-side",
+                    "line_4": "Unlimited Customization - Complete control over design, functionality, and user experience."
+                },
+                "back": {
+                    "name": "Backend (see more)",
+                    "line_1": "Modular Architecture - Encourages organizing code into self-contained modules, improving maintainability, testability, and reusability.",
+                    "line_2": "Enterprise-Grade Applications - Ideal for building complex, large-scale, and long-lived applications due to its structured approach and emphasis on maintainability."
+                }
+            }
+        },
+        "bnei": {
+            "name": "American community in Israel",
+            "line_1": "Accompanying and guiding American families in their move to Israel",
+            "line_2": "An ongoing management system for the Orthodox community",
+            "line_3": "A platform for communication between community members, voluntary information collection, planning and tracking campaigns",
+            "tech": {
+                "title": "Set of technologys",
+                "front": {
+                    "name": "Frontend (see more)",
+                    "line_1": "Choose Your Tools -  React allows me to hand-pick the best libraries for specific needs",
+                    "line_2": "Accelerated Development: By reusing components, I can build new features faster and ensure consistency across the application, delivering new value to the community more quickly."
+                },
+                "back": {
+                    "name": "Backend (see more)",
+                    "line_1": "RESTful API Design - Express is perfectly suited for building clear and scalable RESTful APIs, which is often the backbone of modern web applications, including community platforms that need to serve data to web and potentially mobile clients."
+                }
+            }
+        }
+    },
+    "benefits": {
+        "performance": {
+            "name": "Performance",
+            "line_1": "Web performance is all about making websites fast, including making slow processes seem fast.",
+            "line_2": "Does the site load quickly, allow the user to start interacting with it quickly, and offer reassuring feedback if something is taking time to load (e.g., a loading spinner)? Are scrolling and animations smooth?"
+        },
+        "scaleability": {
+            "name": "Scaleability",
+            "line_1": "Suppose you've built a web application and started getting a few customers. After some feedback and iterations, you are ready with a product that people want.",
+            "line_2": "From now, your application is drawing attention to more and more users, with more and more requests per minute (RPM). Suddenly, a wave of new people use your app, and at one point, they can't use it anymore."
+        },
+        "ui_ux": {
+            "name": "UI/UX",
+            "line_1": "The modern businesses are constantly striving to stand out and deliver exceptional products and services to their customers. A major component of product development, especially for web applications, is how users interact with the app.",
+            "line_2": "This is where UI/UX design comes into play."
+        },
+        "versions": {
+            "name": "Versions and security",
+            "line_1": "the process of deploying new versions of the application's code and assets to enhance functionality, fix bugs, improve performance, or add new features"
+        },
+        "offer": {
+            "title": "What might have been offered to you out there?",
+            "wordpress_card": {
+                "title": "Promotional Website - WordPress",
+                "line_1": "Up to 8 pages - A responsive WordPress website built using an existing template and built with a page builder, and this is how they 'put together' the website.",
+                "line_2": "Two-year guarantee (Maintenance thereafter for an additional fee) - This guarantee is limited solely to bugs built into the template or installed plugins. It certainly does not include: WordPress version updates, templates or plugins (which are important for security), handling conflicts between plugins (which happen a lot with WordPress), restoring the site if it is hacked (WordPress is very popular and prone to hacking if not maintained) and adding new features.",
+                "line_3": "Content Management - This is essentially the built-in content management system of WordPress. It is a standard system.",
+                "line_4": "Website hosting - for a monthly fee. You get a basic hosting service, probably without a CDN, with slow response times under load, and probably without a professional backup service (or the backups are expensive in case you need to restore)"
+            },
+            "react_card": {
+                "title": "Full development of a web application"
+            }
+        }
+    }
+}
