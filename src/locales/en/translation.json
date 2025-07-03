@@ -80,5 +80,15 @@
                 "title": "Full development of a web application"
             }
         }
+    },
+    "guest": {
+        "contact_us": {
+            "title": "Contact Us",
+            "subtitle": "Have a question or want to learn more? Send us a message!",
+            "name_label": "Name",
+            "email_label": "Email",
+            "message_label": "Message",
+            "send_message_button": "Send Message"
+        } 
     }
 }

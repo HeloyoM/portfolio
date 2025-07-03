@@ -26,6 +26,7 @@ import Versions from './assets/versions.jpg';
 import WordPressLogo from './assets/wordpress.png';
 import Me from './assets/me.jpg';
 import CircleIcon from '@mui/icons-material/Circle';
+import GuestContactUs from './locales/ContactUs';
 const ParagraphProjects = styled(Typography)(({ theme }) => ({
   // padding: theme.spacing(2),
   fontWeight: 'bold',
@@ -146,6 +147,7 @@ function App() {
         boxShadow: '0 2px 5px rgba(0, 0, 0, 0.1)',
       }}>
         <Typography>dial now: +972 58-7769313</Typography>
+        <Button sx={{ border: '1px solid lightgrey', borderRadius: 8, margin: 3 }} href="#contact">Contact us</Button>
         <Typography>
           <a href={`mailto:mybs2323@gmail.com`} style={{ textDecoration: 'none', cursor: 'pointer', color: 'green' }}>
             Email: Mybs2323@gmail.com
@@ -601,44 +603,51 @@ function App() {
                 </CardActionArea>
               </Card>
 
-              <Card sx={{ maxWidth: 345 }}>
-                <CardActionArea>
-                  <CardMedia
-                    component="img"
-                    height="325"
-                    image={ReactLogo}
-                    alt="green iguana"
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                      Full development of a web application
-                    </Typography>
-                    <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3, alignItems: 'center' }}>
-                      <CircleIcon sx={{ width: 15, height: 15 }} />
-                      <Typography variant="h6" sx={{ color: 'text.secondary' }}>{t('benefits.offer.react_card.line_1')}</Typography>
-                    </Box>
-                    <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3, alignItems: 'center' }}>
-                      <CircleIcon sx={{ width: 15, height: 15 }} />
-                      <Typography variant="h6" sx={{ color: 'text.secondary' }}>{t('benefits.offer.react_card.line_2')}</Typography>
-                    </Box>
-                    <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3, alignItems: 'center' }}>
-                      <CircleIcon sx={{ width: 15, height: 15 }} />
-                      <Typography variant="h6" sx={{ color: 'text.secondary' }}>{t('benefits.offer.react_card.line_3')}</Typography>
-                    </Box>
-                    <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3, alignItems: 'center' }}>
-                      <CircleIcon sx={{ width: 15, height: 15 }} />
-                      <Typography variant="h6" sx={{ color: 'text.secondary' }}>{t('benefits.offer.react_card.line_4')}</Typography>
-                    </Box>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
+              <Paper sx={{ backgroundColor: 'cornflowerblue', p: 3 }}>
+
+                <Card sx={{ maxWidth: 345 }}>
+                  <CardActionArea>
+                    <CardMedia
+                      component="img"
+                      height="325"
+                      image={ReactLogo}
+                      alt="green iguana"
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="div">
+                        Full development of a web application
+                      </Typography>
+                      <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3, alignItems: 'center' }}>
+                        <CircleIcon sx={{ width: 15, height: 15 }} />
+                        <Typography variant="h6" sx={{ color: 'text.secondary' }}>{t('benefits.offer.react_card.line_1')}</Typography>
+                      </Box>
+                      <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3, alignItems: 'center' }}>
+                        <CircleIcon sx={{ width: 15, height: 15 }} />
+                        <Typography variant="h6" sx={{ color: 'text.secondary' }}>{t('benefits.offer.react_card.line_2')}</Typography>
+                      </Box>
+                      <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3, alignItems: 'center' }}>
+                        <CircleIcon sx={{ width: 15, height: 15 }} />
+                        <Typography variant="h6" sx={{ color: 'text.secondary' }}>{t('benefits.offer.react_card.line_3')}</Typography>
+                      </Box>
+                      <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3, alignItems: 'center' }}>
+                        <CircleIcon sx={{ width: 15, height: 15 }} />
+                        <Typography variant="h6" sx={{ color: 'text.secondary' }}>{t('benefits.offer.react_card.line_4')}</Typography>
+                      </Box>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              </Paper>
             </Box>
           </Box>
 
+
+          <Typography>Therefore, if you are looking for a website for business needs, information management, or an application for mass use - you have come to the right place.</Typography>
         </DashboardSection>
 
 
       </Box >
+
+      <GuestContactUs />
       <Footer />
     </>);
 }
