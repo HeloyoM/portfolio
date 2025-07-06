@@ -48,6 +48,8 @@
         }
     },
     "benefits": {
+        "title": "How to decide?",
+        "sub_title": "Concepts you must know!",
         "performance": {
             "name": "Performance",
             "line_1": "Web performance is all about making websites fast, including making slow processes seem fast.",
@@ -89,6 +91,6 @@
             "email_label": "Email",
             "message_label": "Message",
             "send_message_button": "Send Message"
-        } 
+        }
     }
 }

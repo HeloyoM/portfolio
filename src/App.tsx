@@ -1,14 +1,13 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import './App.css';
 import { Accordion, AccordionDetails, AccordionSummary, Box, Card, CardContent, Paper, styled, Typography, Avatar, List, ListItem, ListItemIcon, ListItemText, Divider, Button, CardActionArea, CardMedia, Stack } from '@mui/material'
 import Footer from './Footer';
-import { Blend, ChartNoAxesGantt, HandPlatter, Link, Presentation, Speech, TentTree, Timer } from 'lucide-react';
+import { Blend, ChartNoAxesGantt, HandPlatter, Link, Presentation, Speech, TentTree, Timer, Languages } from 'lucide-react';
 import { Masonry } from '@mui/lab';
 import FavoriteIcon from './assets/solve-icon.png';
 import { useTranslation } from 'react-i18next';
 import Logo from './assets/logo.png';
 import LoyaltyIcon from '@mui/icons-material/Loyalty';
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import DevicesIcon from '@mui/icons-material/Devices';
@@ -20,13 +19,14 @@ import CorporateFareIcon from '@mui/icons-material/CorporateFare';
 import HandymanIcon from '@mui/icons-material/Handyman';
 import RecyclingIcon from '@mui/icons-material/Recycling';
 import Performance from './assets/performance.jpg';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import Scalability from './assets/scalability.jpg';
 import UI_UX from './assets/ui_ux.jpg';
 import Versions from './assets/versions.jpg';
 import WordPressLogo from './assets/wordpress.png';
-import Me from './assets/me.jpg';
 import CircleIcon from '@mui/icons-material/Circle';
 import GuestContactUs from './locales/ContactUs';
+
 const ParagraphProjects = styled(Typography)(({ theme }) => ({
   // padding: theme.spacing(2),
   fontWeight: 'bold',
@@ -103,7 +103,17 @@ function App() {
   const [frontendOpen2, setFrontendOpen2] = useState(false);
   const [backendOpen2, setBackendOpen2] = useState(false);
   const sectionRef = useRef(null);
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  const toggleLanguage = () => {
+    const newLang = i18n.language === 'en' ? 'he' : 'en';
+    i18n.changeLanguage(newLang);
+    document.body.dir = newLang === 'he' ? 'rtl' : 'ltr'; // ⬅ RTL/LTR switch
+  };
+
+  const handleClick = () => {
+    window.open(`https://wa.me/972587769313`, '_blank');
+  };
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -159,13 +169,6 @@ function App() {
       <Box
         sx={{
           overflowY: 'auto',
-          // height: '100vh',
-          // backgroundSize: 'cover',
-          // backgroundPosition: 'center',
-          // display: 'flex',
-          // alignItems: 'center',
-          // justifyContent: 'center',
-          // color: '#fff',
           textAlign: 'center',
           px: 2,
         }}
@@ -178,6 +181,8 @@ function App() {
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
+          // maxHeight:500,
+          marginBottom: '6%'
         }}>
           <Card
             sx={{
@@ -189,6 +194,7 @@ function App() {
               width: '100%',
               textAlign: 'center',
               p: 5,
+
             }}
           >
             <CardContent>
@@ -235,13 +241,6 @@ function App() {
           </Card>
 
         </Box>
-        {/* <Box
-          sx={{
-            overflowY: 'auto',
-            height: '100vh',
-            scrollSnapType: 'y mandatory',
-          }}
-        > */}
 
         <DashboardSection>
           <SectionTitleWithIcon variant="h5" mb={2}><Presentation />{t('projects.title')}</SectionTitleWithIcon>
@@ -438,8 +437,8 @@ function App() {
 
 
         <DashboardSection id="benefits">
-          <SectionTitleWithIcon variant="h5" mb={2}><LoyaltyIcon />What is it all about?</SectionTitleWithIcon>
-          <Typography sx={{ textAlign: "left", p: 3, fontSize: '19px', fontFamily: 'Roboto', textDecoration: 'underline' }}>Concepts you must know!</Typography>
+          <SectionTitleWithIcon variant="h5" mb={2}><LoyaltyIcon />{t('benefits.title')}</SectionTitleWithIcon>
+          <Typography sx={{ p: 3, fontSize: '19px', fontFamily: 'Roboto', textDecoration: 'underline' }}>{t('benefits.sub_title')}</Typography>
           <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
 
             <Card sx={{ maxWidth: 345 }}>
@@ -639,9 +638,6 @@ function App() {
               </Paper>
             </Box>
           </Box>
-
-
-          <Typography>Therefore, if you are looking for a website for business needs, information management, or an application for mass use - you have come to the right place.</Typography>
         </DashboardSection>
 
 
@@ -649,7 +645,50 @@ function App() {
 
       <GuestContactUs />
       <Footer />
+      <Box sx={styles.lang}>
+        <Languages onClick={toggleLanguage}>
+          {i18n.language === 'en' ? 'עברית' : 'English'}
+        </Languages>
+      </Box>
+
+      <Box onClick={handleClick} sx={styles.whatsapp}>
+        <WhatsAppIcon />
+      </Box>
     </>);
+}
+const styles = {
+  lang: {
+    position: 'fixed',
+    bottom: '40px',
+    left: '20px',
+    backgroundColor: '#25D366',
+    borderRadius: '50%',
+    width: '60px',
+    height: '60px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+    cursor: 'pointer',
+    zIndex: 1000,
+    transition: 'transform 0.2s ease-in-out',
+  },
+  whatsapp: {
+    position: 'fixed',
+    bottom: '40px',
+    right: '20px',
+    backgroundColor: '#25D366',
+    borderRadius: '50%',
+    width: '60px',
+    height: '60px',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+    cursor: 'pointer',
+    zIndex: 1000,
+    transition: 'transform 0.2s ease-in-out',
+  }
 }
 
 export default App;
