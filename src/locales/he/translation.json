@@ -34,14 +34,14 @@
             "line_2": "מערכת ניהול שוטפת לקהילה האורתודוקסית",
             "line_3": "פלטפורמה לתקשורת בין חברי הקהילה, איסוף מידע התנדבותי, תכנון ומעקב אחר קמפיינים",
             "tech": {
-                "title": "Set of technologys",
+               "title": "סט טכנולוגיות",
                 "front": {
-                    "name": "Frontend (see more)",
+                    "name": "צד לקוח (עוד...)",
                     "line_1": "בחר את הכלים שלך - React מאפשר לי לבחור בקפידה את הספריות הטובות ביותר עבור צרכים ספציפיים",
                     "line_2": "פיתוח מואץ-  על ידי שימוש חוזר ברכיבים, אני יכול לבנות פיצ'רים חדשים מהר יותר ולהבטיח עקביות בכל האפליקציה, ובכך לספק ערך חדש מהר יותר."
                 },
                 "back": {
-                    "name": "Backend (see more)",
+                    "name": "צד שרת (עוד...)",
                     "line_1": "RESTful API Design - Express is perfectly suited for building clear and scalable RESTful APIs, which is often the backbone of modern web applications, including community platforms that need to serve data to web and potentially mobile clients."
                 }
             }

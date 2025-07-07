@@ -18,14 +18,18 @@ import NestLogo from './assets/nestjs_logo.png';
 import CorporateFareIcon from '@mui/icons-material/CorporateFare';
 import HandymanIcon from '@mui/icons-material/Handyman';
 import RecyclingIcon from '@mui/icons-material/Recycling';
-import Performance from './assets/performance.jpg';
+
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import Scalability from './assets/scalability.jpg';
+
 import UI_UX from './assets/ui_ux.jpg';
 import Versions from './assets/versions.jpg';
 import WordPressLogo from './assets/wordpress.png';
 import CircleIcon from '@mui/icons-material/Circle';
 import GuestContactUs from './locales/ContactUs';
+import LanguageToggleButton from './components/LanguageToggleButton';
+import WhatsappButton from './components/WhatsappButton';
+import TechStack from './components/techStack';
+import HeroSection from './components/hero/HeroSection';
 
 const ParagraphProjects = styled(Typography)(({ theme }) => ({
   // padding: theme.spacing(2),
@@ -105,16 +109,6 @@ function App() {
   const sectionRef = useRef(null);
   const { t, i18n } = useTranslation();
 
-  const toggleLanguage = () => {
-    const newLang = i18n.language === 'en' ? 'he' : 'en';
-    i18n.changeLanguage(newLang);
-    document.body.dir = newLang === 'he' ? 'rtl' : 'ltr'; // ⬅ RTL/LTR switch
-  };
-
-  const handleClick = () => {
-    window.open(`https://wa.me/972587769313`, '_blank');
-  };
-
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -174,73 +168,7 @@ function App() {
         }}
       >
 
-        <Box sx={{
-          px: 4,
-          py: 6,
-          background: 'linear-gradient(to right, #ffe0e3, #fff6f0)',
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          // maxHeight:500,
-          marginBottom: '6%'
-        }}>
-          <Card
-            sx={{
-              borderRadius: 6,
-              background: 'rgba(255, 255, 255, 0.8)',
-              backdropFilter: 'blur(10px)',
-              boxShadow: '0 8px 24px rgba(0, 0, 0, 0.1)',
-              maxWidth: 600,
-              width: '100%',
-              textAlign: 'center',
-              p: 5,
-
-            }}
-          >
-            <CardContent>
-              <Box display="flex" flexDirection="column" alignItems="center" gap={2}>
-                {/* <FavoriteIcon color="error" sx={{ fontSize: 50 }} /> */}
-
-                <Typography variant={'h4'} fontWeight={700}>
-                  {t('hero.title')}
-                </Typography>
-
-                <Typography variant="body1" color="text.secondary" sx={{ maxWidth: 450 }}>
-                  {t('hero.description')}
-                </Typography>
-
-                <Button
-                  variant="contained"
-                  size="large"
-                  rel="noopener noreferrer"
-                  sx={{
-                    mt: 2,
-                    px: 5,
-                    py: 1.5,
-                    fontWeight: 600,
-                    fontSize: '1rem',
-                    borderRadius: 3,
-                    background: 'linear-gradient(to right, #ff4081, #f50057)',
-                    color: 'white',
-                    transition: 'all 0.3s ease',
-                    '&:hover': {
-                      transform: 'scale(1.05)',
-                      background: 'linear-gradient(to right, #f50057, #d500f9)',
-                    },
-                  }}
-                  href="#benefits"
-                >
-                  {t('hero.button')}
-                </Button>
-
-                <Typography variant="body2" color="text.primary" mt={2}>
-                  {t('hero.bottom_line')}
-                </Typography>
-              </Box>
-            </CardContent>
-          </Card>
-
-        </Box>
+        <HeroSection />
 
         <DashboardSection>
           <SectionTitleWithIcon variant="h5" mb={2}><Presentation />{t('projects.title')}</SectionTitleWithIcon>
@@ -439,92 +367,9 @@ function App() {
         <DashboardSection id="benefits">
           <SectionTitleWithIcon variant="h5" mb={2}><LoyaltyIcon />{t('benefits.title')}</SectionTitleWithIcon>
           <Typography sx={{ p: 3, fontSize: '19px', fontFamily: 'Roboto', textDecoration: 'underline' }}>{t('benefits.sub_title')}</Typography>
-          <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between' }}>
+          <TechStack />
 
-            <Card sx={{ maxWidth: 345 }}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image={Performance}
-                  alt="green iguana"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {t('benefits.performance.name')}
-                  </Typography>
-                  <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-                    {t('benefits.performance.line_1')}
-                  </Typography>
-                  <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-                    {t('benefits.performance.line_2')}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
 
-            <Card sx={{ maxWidth: 345 }}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image={Scalability}
-                  alt="green iguana"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {t('benefits.scaleability.name')}
-                  </Typography>
-                  <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-                    {t('benefits.scaleability.line_1')}
-                  </Typography>
-                  <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-                    {t('benefits.scaleability.line_2')}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-
-            <Card sx={{ maxWidth: 345 }}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image={UI_UX}
-                  alt="green iguana"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {t('benefits.ui_ux.name')}
-                  </Typography>
-                  <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-                    {t('benefits.ui_ux.line_1')}
-                  </Typography>
-                  <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-                    {t('benefits.ui_ux.line_2')}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-            <Card sx={{ maxWidth: 345 }}>
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image={Versions}
-                  alt="green iguana"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {t('benefits.versions.name')}
-                  </Typography>
-                  <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                    {t('benefits.versions.line_1')}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </Box>
 
           <Box>
             <Typography sx={{ border: '1px solid lightgrey', fontSize: '22px', m: 3, backgroundColor: 'cornflowerblue', color: 'white' }} >{t('benefits.offer.title')}</Typography>
@@ -545,15 +390,15 @@ function App() {
                 // backgroundColor: 'rgba(255,0,0,0.1)'
               }}
             >
-              {/* Common starting point / vertical line */}
+
               <Box className={`central-line ${isVisible ? 'visible' : ''}`}></Box>
 
-              {/* Left Arrow */}
+
               <Box className={`growing-arrow-line left-line ${isVisible ? 'visible' : ''}`}>
                 <Box className="arrow-head left-head"></Box>
               </Box>
 
-              {/* Right Arrow */}
+
               <Box className={`growing-arrow-line right-line ${isVisible ? 'visible' : ''}`}>
                 <Box className="arrow-head right-head"></Box>
               </Box>
@@ -644,51 +489,12 @@ function App() {
       </Box >
 
       <GuestContactUs />
-      <Footer />
-      <Box sx={styles.lang}>
-        <Languages onClick={toggleLanguage}>
-          {i18n.language === 'en' ? 'עברית' : 'English'}
-        </Languages>
-      </Box>
 
-      <Box onClick={handleClick} sx={styles.whatsapp}>
-        <WhatsAppIcon />
-      </Box>
+      <Footer />
+
+      <LanguageToggleButton />
+      <WhatsappButton />
     </>);
-}
-const styles = {
-  lang: {
-    position: 'fixed',
-    bottom: '40px',
-    left: '20px',
-    backgroundColor: '#25D366',
-    borderRadius: '50%',
-    width: '60px',
-    height: '60px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
-    cursor: 'pointer',
-    zIndex: 1000,
-    transition: 'transform 0.2s ease-in-out',
-  },
-  whatsapp: {
-    position: 'fixed',
-    bottom: '40px',
-    right: '20px',
-    backgroundColor: '#25D366',
-    borderRadius: '50%',
-    width: '60px',
-    height: '60px',
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
-    cursor: 'pointer',
-    zIndex: 1000,
-    transition: 'transform 0.2s ease-in-out',
-  }
 }
 
 export default App;
