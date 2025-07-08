@@ -44,18 +44,29 @@ const ProjectsList = () => {
     const [backendOpen, setBackendOpen] = useState(false);
     const [frontendOpen2, setFrontendOpen2] = useState(false);
     const [backendOpen2, setBackendOpen2] = useState(false);
+    const [expanded, setExpanded] = useState<string | false>(false);
     const { t } = useTranslation();
+
+    const handleChange =
+        (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => {
+            setExpanded(isExpanded ? panel : false);
+        };
 
     return (
         <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 2 }} spacing={1} sx={{ margin: '1 1' }} >
-            <Accordion>
 
-                <AccordionSummary>
+
+            <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} >
+
+                <AccordionSummary
+                    aria-controls="panel1bh-content"
+                    id="panel1bh-header"
+                >
                     <Card sx={{
                         borderRadius: 6,
                         // background: 'rgba(255, 255, 255, 0.8)',
                         backdropFilter: 'blur(10px)',
-                        boxShadow: '0 8px 24px rgba(0, 0, 0, 0.1)',
+                        boxShadow: expanded !== 'panel1' ? '0 8px 24px rgba(0, 0, 0, 0.1)' : 'none',
                         maxWidth: 600,
                         width: '100%',
                         textAlign: 'center',
@@ -86,7 +97,10 @@ const ProjectsList = () => {
                     <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3 }}>
                         <Link /><a href={`https://app.solve4.org/`}>https://app.solve4.org/</a>
                     </Box>
+
                     <Divider />
+
+
                     <List>
                         <Typography sx={{ fontWeight: 900, textDecoration: 'underline', fontFamily: 'Sora,sens serif', fontSize: '19px', p: 2, textAlign: 'left' }}>{t('projects.solve.tech.title')}</Typography>
                         <ListItem sx={{ cursor: 'pointer', textDecoration: 'underline', color: 'green', fontWeight: 600 }} onClick={() => setFrontendOpen(!frontendOpen)}>{t('projects.solve.tech.front.name')}</ListItem>
@@ -124,7 +138,9 @@ const ProjectsList = () => {
                             </>
                         }
                     </List>
+
                     <ListItem sx={{ cursor: 'pointer', textDecoration: 'underline', color: 'green', fontWeight: 600 }} onClick={() => setBackendOpen(!backendOpen)}>{t('projects.solve.tech.back.name')}</ListItem>
+
                     {backendOpen &&
                         <>
                             <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3, alignItems: 'center' }}><img src={NestLogo} width={45} height={45} /><Typography>Nest.js framework</Typography></Box>
@@ -148,22 +164,28 @@ const ProjectsList = () => {
                 </AccordionDetails>
             </Accordion>
 
-            <Accordion>
 
-                <AccordionSummary>
-                    <Card sx={{
-                        borderRadius: 6,
-                        // background: 'rgba(255, 255, 255, 0.8)',
-                        backdropFilter: 'blur(10px)',
-                        boxShadow: '0 8px 24px rgba(0, 0, 0, 0.1)',
-                        maxWidth: 600,
-                        width: '100%',
-                        textAlign: 'center',
-                        p: 5,
-                    }}>
+            <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+                <AccordionSummary
+                    aria-controls="panel2bh-content"
+                    id="panel2bh-header"
+                >
+                    <Card
+                        sx={{
+                            borderRadius: 6,
+                            // background: 'rgba(255, 255, 255, 0.8)',
+                            backdropFilter: 'blur(10px)',
+                            boxShadow: expanded !== 'panel2' ? '0 8px 24px rgba(0, 0, 0, 0.1)' : 'none',
+                            maxWidth: 600,
+                            width: '100%',
+                            textAlign: 'center',
+                            p: 5
+                        }}>
+
                         <Typography variant={'h4'} fontWeight={700}>
                             {t('projects.bnei.name')}
                         </Typography>
+
                         <CardContent>
                             <img
                                 src={Logo}
@@ -184,8 +206,12 @@ const ProjectsList = () => {
                     <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3 }}>
                         <ChartNoAxesGantt /><ParagraphProjects sx={{ fontWeight: 'bold' }}>{t('projects.bnei.line_2')}</ParagraphProjects>
                     </Box>
-                    <ParagraphProjects><Link /><a href={`https://bnei-aliyha.web.app/guest`}>https://bnei-aliyha.web.app/guest</a></ParagraphProjects>
+                    <ParagraphProjects>
+                        <Link /><a href={`https://bnei-aliyha.web.app/guest`}>https://bnei-aliyha.web.app/guest</a>
+                    </ParagraphProjects>
+
                     <Divider />
+
                     <List>
                         <Typography sx={{ fontWeight: 900, textDecoration: 'underline', fontFamily: 'Sora,sens serif', fontSize: '19px', p: 2, textAlign: 'left' }}>{t('projects.solve.tech.title')}</Typography>
                         <ListItem sx={{ cursor: 'pointer', textDecoration: 'underline', color: 'green', fontWeight: 600 }} onClick={() => setFrontendOpen2(!frontendOpen2)}>{t('projects.solve.tech.front.name')}</ListItem>
@@ -234,7 +260,7 @@ const ProjectsList = () => {
                     }
                 </AccordionDetails>
             </Accordion>
-        </Masonry>
+        </Masonry >
     )
 }
 
