@@ -64,6 +64,23 @@ export default [
                         icon: <TipsAndUpdatesIcon />,
                     }
                 ]
+            },
+            {
+                name: 'back',
+                items: [
+                    {
+                        name: 'title',
+                        icon: <img src={ReactLogo} width={45} height={45} />,
+                    },
+                    {
+                        name: 'line_1',
+                        icon: <AutoStoriesIcon />
+                    },
+                    {
+                        name: 'line_2',
+                        icon: <DevicesIcon />,
+                    }
+                ]
             }
         ]
     },
@@ -88,12 +105,34 @@ export default [
         link: links[1],
         tech: [
             {
-                name: "front",
-
+                name: 'front',
+                items: [
+                    {
+                        name: 'title',
+                        icon: <img src={ReactLogo} width={45} height={45} />,
+                    },
+                    {
+                        name: 'line_1',
+                        icon: <AutoStoriesIcon />
+                    },
+                    {
+                        name: 'line_2',
+                        icon: <DevicesIcon />,
+                    }
+                ]
             },
             {
-                name: "back",
-
+                name: 'back',
+                items: [
+                    {
+                        name: 'title',
+                        icon: <img src={ReactLogo} width={45} height={45} />,
+                    },
+                    {
+                        name: 'line_1',
+                        icon: <AutoStoriesIcon />
+                    }
+                ]
             }
         ]
     }

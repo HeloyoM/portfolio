@@ -28,22 +28,38 @@ type Props = {
     project: IProject
 }
 const ProjectTechList = (props: Props) => {
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState<string>('');
     const { project } = props;
     const { t } = useTranslation();
+
+    const handleChange = (event: any) => {
+        if (open.trim().length > 1) return setOpen('');
+
+        setOpen(event.target.id)
+    };
 
     return (
         <React.Fragment>
 
             {project.tech.map((ti, i) => (
-                ti.items.map((tv) => (
-                    <ListItemContainer>
-                        {tv.icon}
-                        <ListItemTechnologies>
-                            {t(`projects.${project.name}.tech.${ti.name}.${tv.name}`)}
-                        </ListItemTechnologies>
-                    </ListItemContainer>
-                ))
+                <React.Fragment>
+
+                    <ListItem
+                        sx={{ cursor: 'pointer', textDecoration: 'underline', color: 'green', fontWeight: 600 }}
+                        id={ti.name}
+                        onClick={(e) => handleChange(e)}>
+                        {t(`projects.${project.name}.tech.${ti.name}.name`)}
+                    </ListItem>
+
+                    {open === ti.name && ti.items.map((tv) => (
+                        <ListItemContainer>
+                            {tv.icon}
+                            <ListItemTechnologies>
+                                {t(`projects.${project.name}.tech.${ti.name}.${tv.name}`)}
+                            </ListItemTechnologies>
+                        </ListItemContainer>
+                    ))}
+                </React.Fragment>
             ))}
         </React.Fragment>
 
