@@ -14,7 +14,7 @@ const TechCard = ({ item }: Props) => {
                 <CardMedia
                     component="img"
                     height="140"
-                    image={item.img}
+                    image={item.icon}
                     alt={item.name}
                 />
                 <CardContent>

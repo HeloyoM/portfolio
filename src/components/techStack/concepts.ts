@@ -7,18 +7,18 @@ import { ITech } from "./ITech.interface";
 export default [
     {
         name: `performance`,
-        img: Performance
+        icon: Performance
     },
     {
         name: `scaleability`,
-        img: Scalability
+        icon: Scalability
     },
     {
         name: `ui_ux`,
-        img: UI_UX
+        icon: UI_UX
     },
     {
         name: `versions`,
-        img: Versions
+        icon: Versions
     }
 ] as ITech[]

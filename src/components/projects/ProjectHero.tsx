@@ -18,6 +18,9 @@ const ProjectHero = (props: Props) => {
             width: '100%',
             textAlign: 'center',
             p: 5,
+            "&:hover": {
+                boxShadow: '0 4px 8px rgba(0,0,0,0.2)'
+            }
         }}>
             <Typography variant={'h4'} fontWeight={700}>
                 {t(`projects.${props.project.name}.name`)}
