@@ -18,14 +18,6 @@ import ProjectsContainer from './ProjectsContainer';
 import AccordionTopRow from './AccordionTopRow';
 import FirstPartAccordionDetails from './FirstPartAccordionDetails';
 
-const ParagraphProjects = styled(Typography)(({ theme }) => ({
-    // padding: theme.spacing(2),
-    fontWeight: 'bold',
-    fontFamily: 'David',
-    fontSize: 18,
-    color: theme.palette.info.main
-}));
-
 const ListItemTechnologies = styled(ListItemText)(({ }) => ({
     fontSize: '18px',
     fontFamily: 'David',
@@ -45,6 +37,12 @@ const BulltProjectContainer = styled(Box)(({
     display: 'grid',
     gridTemplateColumns: '30px auto',
     padding: 20
+}))
+
+const ListItemContainer = styled(Box)(({
+    display: 'grid',
+    gridTemplateColumns: '30px auto',
+    p: 3, alignItems: 'center'
 }))
 const ProjectsList = () => {
     const [frontendOpen, setFrontendOpen] = useState(false);
@@ -79,38 +77,44 @@ const ProjectsList = () => {
 
                     <List>
                         <Typography sx={{ fontWeight: 900, textDecoration: 'underline', fontFamily: 'Sora,sens serif', fontSize: '19px', p: 2, textAlign: 'left' }}>{t('projects.solve.tech.title')}</Typography>
+
                         <ListItem sx={{ cursor: 'pointer', textDecoration: 'underline', color: 'green', fontWeight: 600 }} onClick={() => setFrontendOpen(!frontendOpen)}>{t('projects.solve.tech.front.name')}</ListItem>
                         {frontendOpen &&
                             <>
 
-                                <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3, alignItems: 'center' }}><img src={ReactLogo} width={45} height={45} /><Typography sx={{ fontSize: '19px', fontWeight: 'bold' }}>React framework <a style={{ fontWeight: 400, fontSize: '16px' }} href="https://www.netguru.com/blog/why-use-react">learn more</a></Typography></Box>
-                                <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3, alignItems: 'center' }}>
+                                <ListItemContainer>
+                                    <img src={ReactLogo} width={45} height={45} />
+                                    <Typography sx={{ fontSize: '19px', fontWeight: 'bold' }}>React framework <a style={{ fontWeight: 400, fontSize: '16px' }} href="https://www.netguru.com/blog/why-use-react">learn more</a>
+                                    </Typography>
+                                </ListItemContainer>
+
+                                <ListItemContainer>
                                     <AutoStoriesIcon />
                                     <ListItemTechnologies>
                                         {t('projects.solve.tech.front.line_1')}
                                     </ListItemTechnologies>
-                                </Box>
+                                </ListItemContainer>
 
-                                <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3, alignItems: 'center' }}>
+                                <ListItemContainer>
                                     <DevicesIcon />
                                     <ListItemTechnologies>
                                         {t('projects.solve.tech.front.line_2')}
                                     </ListItemTechnologies>
-                                </Box>
+                                </ListItemContainer>
 
-                                <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3, alignItems: 'center' }}>
+                                <ListItemContainer>
                                     <AttachMoneyIcon />
                                     <ListItemTechnologies>
                                         {t('projects.solve.tech.front.line_3')}
                                     </ListItemTechnologies>
-                                </Box>
+                                </ListItemContainer>
 
-                                <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3, alignItems: 'center' }}>
+                                <ListItemContainer>
                                     <TipsAndUpdatesIcon />
                                     <ListItemTechnologies>
                                         {t('projects.solve.tech.front.line_4')}
                                     </ListItemTechnologies>
-                                </Box>
+                                </ListItemContainer>
                             </>
                         }
                     </List>
@@ -119,21 +123,21 @@ const ProjectsList = () => {
 
                     {backendOpen &&
                         <>
-                            <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3, alignItems: 'center' }}><img src={NestLogo} width={45} height={45} /><Typography>Nest.js framework</Typography></Box>
+                            <ListItemContainer><img src={NestLogo} width={45} height={45} /><Typography>Nest.js framework</Typography></ListItemContainer>
 
-                            <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3, alignItems: 'center' }}>
+                            <ListItemContainer>
                                 <ViewModuleIcon />
                                 <ListItemTechnologies>
                                     {t('projects.solve.tech.back.line_1')}
                                 </ListItemTechnologies>
-                            </Box>
+                            </ListItemContainer>
 
-                            <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3, alignItems: 'center' }}>
+                            <ListItemContainer>
                                 <CorporateFareIcon />
                                 <ListItemTechnologies>
                                     {t('projects.solve.tech.back.line_2')}
                                 </ListItemTechnologies>
-                            </Box>
+                            </ListItemContainer>
 
                         </>
                     }

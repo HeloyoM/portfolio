@@ -1,5 +1,4 @@
 import { Card, CardContent, Typography } from '@mui/material'
-import React from 'react'
 import { useTranslation } from 'react-i18next'
 import IProject from './IProject.interface'
 
