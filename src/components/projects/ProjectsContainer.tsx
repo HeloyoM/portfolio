@@ -1,5 +1,5 @@
 import { Masonry } from '@mui/lab';
-import React, { FC, JSX, ReactNode } from 'react';
+import { FC, JSX } from 'react';
 
 type Props = {
     children: JSX.Element | JSX.Element[];

@@ -1,6 +1,5 @@
 import { useState } from 'react'
-import { Masonry } from '@mui/lab';
-import { Accordion, AccordionDetails, AccordionSummary, Box, Card, CardContent, Divider, List, ListItem, ListItemText, styled, Typography } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Box, Divider, List, ListItem, ListItemText, styled, Typography } from '@mui/material';
 import { Blend, ChartNoAxesGantt, HandPlatter, Link, Speech, TentTree, Timer } from 'lucide-react';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
@@ -16,6 +15,8 @@ import ReactLogo from '../../assets/react_logo.png';
 import ProjectHero from './ProjectHero';
 import projects from './projects';
 import ProjectsContainer from './ProjectsContainer';
+import AccordionTopRow from './AccordionTopRow';
+import FirstPartAccordionDetails from './FirstPartAccordionDetails';
 
 const ParagraphProjects = styled(Typography)(({ theme }) => ({
     // padding: theme.spacing(2),
@@ -43,7 +44,7 @@ const ListItemTechnologies = styled(ListItemText)(({ }) => ({
 const BulltProjectContainer = styled(Box)(({
     display: 'grid',
     gridTemplateColumns: '30px auto',
-    p: 3
+    padding: 20
 }))
 const ProjectsList = () => {
     const [frontendOpen, setFrontendOpen] = useState(false);
@@ -60,32 +61,17 @@ const ProjectsList = () => {
 
     return (
         <ProjectsContainer>
-            
+
             <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} >
 
-                <AccordionSummary
-                    aria-controls="panel1bh-content"
-                    id="panel1bh-header"
-                >
-                    <ProjectHero project={projects[0]} expanded={expanded === 'panel1'} />
-                </AccordionSummary>
+                <AccordionTopRow project={projects[0]} expanded={expanded === 'panel1'} />
 
                 <AccordionDetails>
-                    <BulltProjectContainer>
-                        <HandPlatter /><ParagraphProjects>{t('projects.solve.line_1')}</ParagraphProjects>
-                    </BulltProjectContainer>
-
-                    <BulltProjectContainer>
-                        <Blend /><ParagraphProjects>{t('projects.solve.line_2')}</ParagraphProjects>
-                    </BulltProjectContainer>
-
-                    <BulltProjectContainer>
-                        <Timer /><ParagraphProjects>{t('projects.solve.line_3')}</ParagraphProjects>
-                    </BulltProjectContainer>
+                    <FirstPartAccordionDetails project={projects[0]} />
 
                     <BulltProjectContainer>
                         <Link />
-                        <a href={`https://app.solve4.org/`}>https://app.solve4.org/</a>
+                        <a href={projects[0].link.url}>{projects[0].link.url}</a>
                     </BulltProjectContainer>
 
                     <Divider />
@@ -156,26 +142,16 @@ const ProjectsList = () => {
 
 
             <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-                <AccordionSummary
-                    aria-controls="panel2bh-content"
-                    id="panel2bh-header"
-                >
-                    <ProjectHero project={projects[1]} expanded={expanded === 'panel2'} />
-                </AccordionSummary>
+
+                <AccordionTopRow project={projects[1]} expanded={expanded === 'panel2'} />
 
                 <AccordionDetails>
-                    <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3 }}>
-                        <TentTree /><ParagraphProjects sx={{ fontWeight: 'bold' }}>{t('projects.bnei.line_1')}</ParagraphProjects>
-                    </Box>
-                    <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3 }}>
-                        <Speech /><ParagraphProjects sx={{ fontWeight: 'bold' }}>{t('projects.bnei.line_1')}</ParagraphProjects>
-                    </Box>
-                    <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3 }}>
-                        <ChartNoAxesGantt /><ParagraphProjects sx={{ fontWeight: 'bold' }}>{t('projects.bnei.line_2')}</ParagraphProjects>
-                    </Box>
-                    <ParagraphProjects>
-                        <Link /><a href={`https://bnei-aliyha.web.app/guest`}>https://bnei-aliyha.web.app/guest</a>
-                    </ParagraphProjects>
+                    <FirstPartAccordionDetails project={projects[1]} />
+
+                    <BulltProjectContainer>
+                        <Link />
+                        <a href={projects[1].link.url}>{projects[1].link.url}</a>
+                    </BulltProjectContainer>
 
                     <Divider />
 
