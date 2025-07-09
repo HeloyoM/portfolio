@@ -8,13 +8,14 @@ import DevicesIcon from '@mui/icons-material/Devices';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 import ViewModuleIcon from '@mui/icons-material/ViewModule';
 import { useTranslation } from 'react-i18next';
-import FavoriteIcon from '../../assets/solve-icon.png';
 import NestLogo from '../../assets/nestjs_logo.png';
 import CorporateFareIcon from '@mui/icons-material/CorporateFare';
 import HandymanIcon from '@mui/icons-material/Handyman';
 import RecyclingIcon from '@mui/icons-material/Recycling';
 import ReactLogo from '../../assets/react_logo.png';
-import Logo from '../../assets/logo.png';
+import ProjectHero from './ProjectHero';
+import projects from './projects';
+import ProjectsContainer from './ProjectsContainer';
 
 const ParagraphProjects = styled(Typography)(({ theme }) => ({
     // padding: theme.spacing(2),
@@ -39,6 +40,11 @@ const ListItemTechnologies = styled(ListItemText)(({ }) => ({
     },
 }))
 
+const BulltProjectContainer = styled(Box)(({
+    display: 'grid',
+    gridTemplateColumns: '30px auto',
+    p: 3
+}))
 const ProjectsList = () => {
     const [frontendOpen, setFrontendOpen] = useState(false);
     const [backendOpen, setBackendOpen] = useState(false);
@@ -53,50 +59,34 @@ const ProjectsList = () => {
         };
 
     return (
-        <Masonry columns={{ xs: 1, sm: 2, md: 3, lg: 2 }} spacing={1} sx={{ margin: '1 1' }} >
-
-
+        <ProjectsContainer>
+            
             <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} >
 
                 <AccordionSummary
                     aria-controls="panel1bh-content"
                     id="panel1bh-header"
                 >
-                    <Card sx={{
-                        borderRadius: 6,
-                        // background: 'rgba(255, 255, 255, 0.8)',
-                        backdropFilter: 'blur(10px)',
-                        boxShadow: expanded !== 'panel1' ? '0 8px 24px rgba(0, 0, 0, 0.1)' : 'none',
-                        maxWidth: 600,
-                        width: '100%',
-                        textAlign: 'center',
-                        p: 5,
-                    }}>
-                        <Typography variant={'h4'} fontWeight={700}>
-                            {t('projects.solve.name')}
-                        </Typography>
-                        <CardContent>
-                            <img src={FavoriteIcon} height={50} width={80} />
-                        </CardContent>
-                    </Card>
+                    <ProjectHero project={projects[0]} expanded={expanded === 'panel1'} />
                 </AccordionSummary>
 
                 <AccordionDetails>
-                    <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3 }}>
+                    <BulltProjectContainer>
                         <HandPlatter /><ParagraphProjects>{t('projects.solve.line_1')}</ParagraphProjects>
-                    </Box>
+                    </BulltProjectContainer>
 
-                    <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3 }}>
+                    <BulltProjectContainer>
                         <Blend /><ParagraphProjects>{t('projects.solve.line_2')}</ParagraphProjects>
-                    </Box>
+                    </BulltProjectContainer>
 
-                    <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3 }}>
+                    <BulltProjectContainer>
                         <Timer /><ParagraphProjects>{t('projects.solve.line_3')}</ParagraphProjects>
-                    </Box>
+                    </BulltProjectContainer>
 
-                    <Box sx={{ display: 'grid', gridTemplateColumns: '30px auto', p: 3 }}>
-                        <Link /><a href={`https://app.solve4.org/`}>https://app.solve4.org/</a>
-                    </Box>
+                    <BulltProjectContainer>
+                        <Link />
+                        <a href={`https://app.solve4.org/`}>https://app.solve4.org/</a>
+                    </BulltProjectContainer>
 
                     <Divider />
 
@@ -170,30 +160,7 @@ const ProjectsList = () => {
                     aria-controls="panel2bh-content"
                     id="panel2bh-header"
                 >
-                    <Card
-                        sx={{
-                            borderRadius: 6,
-                            // background: 'rgba(255, 255, 255, 0.8)',
-                            backdropFilter: 'blur(10px)',
-                            boxShadow: expanded !== 'panel2' ? '0 8px 24px rgba(0, 0, 0, 0.1)' : 'none',
-                            maxWidth: 600,
-                            width: '100%',
-                            textAlign: 'center',
-                            p: 5
-                        }}>
-
-                        <Typography variant={'h4'} fontWeight={700}>
-                            {t('projects.bnei.name')}
-                        </Typography>
-
-                        <CardContent>
-                            <img
-                                src={Logo}
-                                alt="logo"
-                                height={50} width={80}
-                            />
-                        </CardContent>
-                    </Card>
+                    <ProjectHero project={projects[1]} expanded={expanded === 'panel2'} />
                 </AccordionSummary>
 
                 <AccordionDetails>
@@ -260,7 +227,7 @@ const ProjectsList = () => {
                     }
                 </AccordionDetails>
             </Accordion>
-        </Masonry >
+        </ProjectsContainer >
     )
 }
 
