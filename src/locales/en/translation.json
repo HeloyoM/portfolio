@@ -59,10 +59,9 @@
                 "back": {
                     "name": "Backend (see more)",
                     "header": {
-                        "title": "Nest.js",
+                        "title": "Express.js",
                         "sub_title": "learn more",
-                        "url": " ",
-                        "logo": "../../assets/nestjs_logo.png"
+                        "url": " "
                     },
                     "line_1": "RESTful API Design - Express is perfectly suited for building clear and scalable RESTful APIs, which is often the backbone of modern web applications, including community platforms that need to serve data to web and potentially mobile clients."
                 }

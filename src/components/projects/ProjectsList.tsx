@@ -19,63 +19,38 @@ const ProjectsList = () => {
     return (
         <ProjectsContainer>
 
-            <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')} >
+            {
+                projects.map((p, i) => (
+                    <Accordion expanded={expanded === p.name} onChange={handleChange(p.name)} >
 
-                <AccordionTopRow project={projects[0]} expanded={expanded === 'panel1'} />
+                        <AccordionTopRow project={p} expanded={expanded === p.name} />
 
-                <AccordionDetails>
-                    <FirstPartAccordionDetails project={projects[0]} />
+                        <AccordionDetails>
+                            <FirstPartAccordionDetails project={p} />
 
-                    <Divider />
+                            <Divider />
 
-                    <List>
-                        <Typography
-                            sx={{
-                                fontWeight: 900,
-                                textDecoration: 'underline',
-                                fontFamily: 'Sora,sens serif',
-                                fontSize: '19px',
-                                p: 2,
-                                textAlign: 'left'
-                            }}
-                        >{t(`projects.solve.tech.title`)}
-                        </Typography>
+                            <List>
+                                <Typography
+                                    sx={{
+                                        fontWeight: 900,
+                                        textDecoration: 'underline',
+                                        fontFamily: 'Sora,sens serif',
+                                        fontSize: '19px',
+                                        p: 2,
+                                        textAlign: 'left'
+                                    }}
+                                >{t(`projects.${p.name}.tech.title`)}
+                                </Typography>
 
-                        <ProjectTechList project={projects[0]} />
+                                <ProjectTechList project={p} />
 
-                    </List>
+                            </List>
 
-                </AccordionDetails>
-            </Accordion>
-
-
-            <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
-
-                <AccordionTopRow project={projects[1]} expanded={expanded === 'panel2'} />
-
-                <AccordionDetails>
-                    <FirstPartAccordionDetails project={projects[1]} />
-
-                    <Divider />
-
-                    <List>
-                        <Typography
-                            sx={{
-                                fontWeight: 900,
-                                textDecoration: 'underline',
-                                fontFamily: 'Sora,sens serif',
-                                fontSize: '19px',
-                                p: 2,
-                                textAlign: 'left'
-                            }}
-                        >{t(`projects.bnei.tech.title`)}
-                        </Typography>
-
-                        <ProjectTechList project={projects[1]} />
-                    </List>
-
-                </AccordionDetails>
-            </Accordion>
+                        </AccordionDetails>
+                    </Accordion>
+                ))
+            }
         </ProjectsContainer >
     )
 }
