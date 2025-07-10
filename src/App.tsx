@@ -1,14 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import './App.css';
-import { Accordion, AccordionDetails, AccordionSummary, Box, Card, CardContent, Paper, styled, Typography, Avatar, List, ListItem, ListItemIcon, ListItemText, Divider, Button, CardActionArea, CardMedia, Stack } from '@mui/material'
+import { Box, Card, CardContent, Paper, styled, Typography, CardActionArea, CardMedia } from '@mui/material'
 import Footer from './Footer';
-import { Blend, ChartNoAxesGantt, HandPlatter, Link, Presentation, Speech, TentTree, Timer, Languages } from 'lucide-react';
-
-
+import { Presentation } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-
 import LoyaltyIcon from '@mui/icons-material/Loyalty';
-
 import ReactLogo from './assets/react_logo.png';
 import WordPressLogo from './assets/wordpress.png';
 import CircleIcon from '@mui/icons-material/Circle';
@@ -20,28 +16,12 @@ import HeroSection from './components/hero/HeroSection';
 import Header from './components/header/Header';
 import ProjectsList from './components/projects/ProjectsList';
 
-const GuestSection = styled(Box)(({ theme }) => ({
-  height: '100vh',
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center', // Align items to the center horizontally
-  scrollSnapAlign: 'start',
-  padding: theme.spacing(2),
-  overflow: 'hidden', // To contain full-width children
-}));
-
 const DashboardSection = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(3),
-  // borderRadius: theme.shape.borderRadius * 2,
   marginBottom: theme.spacing(2),
   backgroundColor: theme.palette.background.default,
   boxShadow: theme.shadows[2],
   transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-  // '&:hover': {
-  //   transform: 'translateY(-2px)',
-  //   boxShadow: theme.shadows[4],
-  //   backgroundColor: '#e3f2fd'
-  // },
 }));
 
 const SectionTitle = styled(Typography)(({ theme }) => ({
@@ -53,8 +33,6 @@ const SectionTitle = styled(Typography)(({ theme }) => ({
   alignItems: 'center',
   gap: theme.spacing(1),
 }));
-
-
 
 const SectionTitleWithIcon = styled(SectionTitle)(({ theme }) => ({
   fontSize: theme.typography.h6.fontSize,
@@ -71,7 +49,7 @@ const SectionTitleWithIcon = styled(SectionTitle)(({ theme }) => ({
 function App() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -98,6 +76,7 @@ function App() {
       }
     };
   }, []);
+  
   return (
     <>
       <Header />
@@ -115,7 +94,7 @@ function App() {
 
         <DashboardSection id="projects">
           <SectionTitleWithIcon variant="h5" mb={2}><Presentation />{t('projects.title')}</SectionTitleWithIcon>
-          <ProjectsList/>
+          <ProjectsList />
         </DashboardSection>
 
 

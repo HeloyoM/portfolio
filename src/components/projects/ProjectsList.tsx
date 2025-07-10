@@ -28,7 +28,6 @@ const ProjectsList = () => {
 
                     <Divider />
 
-
                     <List>
                         <Typography
                             sx={{
@@ -46,19 +45,6 @@ const ProjectsList = () => {
 
                     </List>
 
-                    {/* <ListItem sx={{ cursor: 'pointer', textDecoration: 'underline', color: 'green', fontWeight: 600 }} onClick={() => setBackendOpen(!backendOpen)}>{t('projects.solve.tech.back.name')}</ListItem>
-
-                    {backendOpen &&
-                        <>
-                            <ListItemContainer>
-                                <img src={NestLogo} width={45} height={45} />
-                                <Typography>Nest.js framework</Typography>
-                            </ListItemContainer>
-
-                            <ProjectTechList project={projects[0]} />
-
-                        </>
-                    } */}
                 </AccordionDetails>
             </Accordion>
 
@@ -73,6 +59,18 @@ const ProjectsList = () => {
                     <Divider />
 
                     <List>
+                        <Typography
+                            sx={{
+                                fontWeight: 900,
+                                textDecoration: 'underline',
+                                fontFamily: 'Sora,sens serif',
+                                fontSize: '19px',
+                                p: 2,
+                                textAlign: 'left'
+                            }}
+                        >{t(`projects.bnei.tech.title`)}
+                        </Typography>
+
                         <ProjectTechList project={projects[1]} />
                     </List>
 

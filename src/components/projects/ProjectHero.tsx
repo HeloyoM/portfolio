@@ -19,7 +19,7 @@ const ProjectHero = (props: Props) => {
             textAlign: 'center',
             p: 5,
             "&:hover": {
-                boxShadow: '0 4px 8px rgba(0,0,0,0.2)'
+                boxShadow: props.expanded ? 'none' : '0 4px 8px rgba(0,0,0,0.2)'
             }
         }}>
             <Typography variant={'h4'} fontWeight={700}>
