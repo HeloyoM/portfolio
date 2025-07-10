@@ -1,4 +1,4 @@
-import { Box, ListItem, ListItemText, styled } from '@mui/material'
+import { Box, ListItem, ListItemText, styled, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next';
 import IProject from './IProject.interface';
 import React, { useState } from 'react';
@@ -45,20 +45,41 @@ const ProjectTechList = (props: Props) => {
                 <React.Fragment>
 
                     <ListItem
-                        sx={{ cursor: 'pointer', textDecoration: 'underline', color: 'green', fontWeight: 600 }}
+                        sx={{
+                            cursor: 'pointer',
+                            textDecoration: 'underline',
+                            color: 'green',
+                            fontWeight: 600
+                        }}
                         id={ti.name}
                         onClick={(e) => handleChange(e)}>
                         {t(`projects.${project.name}.tech.${ti.name}.name`)}
                     </ListItem>
 
-                    {open === ti.name && ti.items.map((tv) => (
-                        <ListItemContainer>
-                            {tv.icon}
-                            <ListItemTechnologies>
-                                {t(`projects.${project.name}.tech.${ti.name}.${tv.name}`)}
-                            </ListItemTechnologies>
-                        </ListItemContainer>
-                    ))}
+                    {open === ti.name && ti.items.map((tv, index) => {
+                        if (index === 0) {
+                            return (
+                                <ListItemContainer sx={{gridTemplateColumns: 'auto'}}>
+                                    {/* <img src={} width={45} height={45} /> */}
+                                    <Typography sx={{ fontSize: '19px', fontWeight: 'bold' }}>
+                                        {t(`projects.${project.name}.tech.${ti.name}.header.title`)}{' '}
+                                        <a style={{ fontWeight: 400, fontSize: '16px' }} href={t(`projects.${project.name}.tech.${ti.name}.header.url`)}>
+                                            {t(`projects.${project.name}.tech.${ti.name}.header.sub_title`)}
+                                        </a>
+                                    </Typography>
+                                </ListItemContainer>
+                            )
+                        } else {
+                            return (
+                                <ListItemContainer>
+                                    {tv.icon}
+                                    <ListItemTechnologies>
+                                        {t(`projects.${project.name}.tech.${ti.name}.${tv.name}`)}
+                                    </ListItemTechnologies>
+                                </ListItemContainer>
+                            )
+                        }
+                    })}
                 </React.Fragment>
             ))}
         </React.Fragment>

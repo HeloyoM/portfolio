@@ -1,7 +1,8 @@
 import React from 'react'
-import IProject, { ILine } from './IProject.interface'
-import { Box, IconButton, styled, Typography } from '@mui/material'
+import IProject from './IProject.interface'
+import { Box, styled, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next';
+import { Link } from 'lucide-react';
 
 const BulltProjectContainer = styled(Box)(({
     display: 'grid',
@@ -25,12 +26,23 @@ const FirstPartAccordionDetails = (props: Props) => {
 
     return (
         <React.Fragment>
-            {project.lines.map((l, i) => (
-                <BulltProjectContainer>
-                    {l.icon}
-                    <ParagraphProjects>{t(`projects.${project.name}.${l.name}`)}</ParagraphProjects>
-                </BulltProjectContainer>
-            ))}
+            {project.lines.map((l, i) => {
+                if (l.name === 'link') {
+                    return (
+                        <BulltProjectContainer>
+                            <Link />
+                            <a href={l.opt.url}>{l.opt.url}</a>
+                        </BulltProjectContainer>
+                    )
+                } else {
+                    return (
+                        <BulltProjectContainer>
+                            {l.icon}
+                            <ParagraphProjects>{t(`projects.${project.name}.${l.name}`)}</ParagraphProjects>
+                        </BulltProjectContainer>
+                    )
+                }
+            })}
         </React.Fragment>
     )
 }

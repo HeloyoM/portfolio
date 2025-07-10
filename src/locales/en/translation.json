@@ -16,6 +16,11 @@
                 "title": "Set of technologys",
                 "front": {
                     "name": "Frontend (see more)",
+                    "header": {
+                        "title": "React framework",
+                        "sub_title": "learn more",
+                        "url": "https://www.netguru.com/blog/why-use-react"
+                    },
                     "line_1": "Single Page Applications (SPA) Capability",
                     "line_2": "Highly Responsive UI - Immediate feedback to user interactions, no full page reloads.",
                     "line_3": "Reduced Server Load - More processing happens client-side",
@@ -23,6 +28,11 @@
                 },
                 "back": {
                     "name": "Backend (see more)",
+                    "header": {
+                        "title": "Nest.js framework",
+                        "sub_title": "learn more",
+                        "url": "https://www.habilelabs.io/blog/why-choose-nest-js-over-other-node-frameworks"
+                    },
                     "line_1": "Modular Architecture - Encourages organizing code into self-contained modules, improving maintainability, testability, and reusability.",
                     "line_2": "Enterprise-Grade Applications - Ideal for building complex, large-scale, and long-lived applications due to its structured approach and emphasis on maintainability."
                 }
@@ -37,11 +47,23 @@
                 "title": "Set of technologys",
                 "front": {
                     "name": "Frontend (see more)",
-                    "line_1": "Choose Your Tools -  React allows me to hand-pick the best libraries for specific needs",
-                    "line_2": "Accelerated Development: By reusing components, I can build new features faster and ensure consistency across the application, delivering new value to the community more quickly."
+                    "header": {
+                        "title": "React framework",
+                        "sub_title": "learn more",
+                        "url": "https://www.netguru.com/blog/why-use-react"
+                    },
+                    "line_1": "React framwork",
+                    "line_2": "Choose Your Tools -  React allows me to hand-pick the best libraries for specific needs",
+                    "line_3": "Accelerated Development: By reusing components, I can build new features faster and ensure consistency across the application, delivering new value to the community more quickly."
                 },
                 "back": {
                     "name": "Backend (see more)",
+                    "header": {
+                        "title": "Nest.js",
+                        "sub_title": "learn more",
+                        "url": " ",
+                        "logo": "../../assets/nestjs_logo.png"
+                    },
                     "line_1": "RESTful API Design - Express is perfectly suited for building clear and scalable RESTful APIs, which is often the backbone of modern web applications, including community platforms that need to serve data to web and potentially mobile clients."
                 }
             }

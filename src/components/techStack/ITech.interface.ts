@@ -8,5 +8,5 @@ export interface ITech {
 
 export interface ITechItem {
     name: string
-    icon: JSX.Element
+    icon: JSX.Element,
 }

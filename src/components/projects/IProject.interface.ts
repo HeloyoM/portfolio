@@ -12,6 +12,7 @@ export default interface IProject {
 export interface ILine {
     name: string
     icon: JSX.Element
+    opt: any
 }
 
 export interface ILink {

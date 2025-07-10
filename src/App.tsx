@@ -10,11 +10,6 @@ import { useTranslation } from 'react-i18next';
 import LoyaltyIcon from '@mui/icons-material/Loyalty';
 
 import ReactLogo from './assets/react_logo.png';
-
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-
-import UI_UX from './assets/ui_ux.jpg';
-import Versions from './assets/versions.jpg';
 import WordPressLogo from './assets/wordpress.png';
 import CircleIcon from '@mui/icons-material/Circle';
 import GuestContactUs from './locales/ContactUs';

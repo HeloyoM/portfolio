@@ -7,6 +7,10 @@ import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import DevicesIcon from '@mui/icons-material/Devices';
 import TipsAndUpdatesIcon from '@mui/icons-material/TipsAndUpdates';
 import ReactLogo from '../../assets/react_logo.png';
+import ViewModuleIcon from '@mui/icons-material/ViewModule';
+import CorporateFareIcon from '@mui/icons-material/CorporateFare';
+import BoltIcon from '@mui/icons-material/Bolt';
+import LocalLibraryIcon from '@mui/icons-material/LocalLibrary';
 
 const links: ILink[] = [
     {
@@ -36,9 +40,13 @@ export default [
             {
                 name: "line_3",
                 icon: <Timer />
-            }
+            },
+            {
+                name: 'link',
+                icon: <Link />,
+                opt: links.find((l: ILink) => l.name === 'solve'),
+            },
         ],
-        link: links.find((l: ILink) => l.name === 'solve'),
         tech: [
             {
                 name: 'front',
@@ -63,6 +71,7 @@ export default [
                         name: 'line_4',
                         icon: <TipsAndUpdatesIcon />,
                     }
+
                 ]
             },
             {
@@ -74,11 +83,11 @@ export default [
                     },
                     {
                         name: 'line_1',
-                        icon: <AutoStoriesIcon />
+                        icon: <ViewModuleIcon />
                     },
                     {
                         name: 'line_2',
-                        icon: <DevicesIcon />,
+                        icon: <CorporateFareIcon />,
                     }
                 ]
             }
@@ -113,11 +122,12 @@ export default [
                     },
                     {
                         name: 'line_1',
-                        icon: <AutoStoriesIcon />
+                        icon: <LocalLibraryIcon  />
                     },
                     {
                         name: 'line_2',
-                        icon: <DevicesIcon />,
+                        icon: <BoltIcon />,
+
                     }
                 ]
             },
