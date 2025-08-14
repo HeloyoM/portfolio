@@ -100,7 +100,11 @@
                 "line_4": "Website hosting - for a monthly fee. You get a basic hosting service, probably without a CDN, with slow response times under load, and probably without a professional backup service (or the backups are expensive in case you need to restore)"
             },
             "react_card": {
-                "title": "Full development of a web application"
+                "title": "Full development of a web application",
+                "line_1": "Suitable for businesses that need a customized solution, high performance, scalability, integration with other systems, a unique user interface, or complex functionality.",
+                "line_2": "Instead of being dependent on a single provider who charges you a fixed monthly fee for hosting that is part of their package, we recommend that you fully own and control your hosting. A website built with us benefits from much more advanced and efficient hosting capabilities. The monthly cost on those platforms is often very low for small-to-medium websites, and often even free.",
+                "line_3": "You can manage your website content from anywhere, regardless of the website technology itself. Today it appears on your website, and tomorrow if you want a mobile app or any other platform – the content is already ready and accessible.",
+                "line_4": "If you would like to add new features, change design, make significant security updates to libraries (not under initial responsibility) or fix bugs that do not directly arise from my initial code, I will offer you a package of hours or a small one-off project according to your needs. There is no fixed monthly commitment for 'on-the-fly' maintenance, but you will only pay for the work you actually need."
             }
         }
     },
@@ -112,6 +116,22 @@
             "email_label": "Email",
             "message_label": "Message",
             "send_message_button": "Send Message"
+        }
+    },
+    "hit": {
+        "chip": "How it works",
+        "title": "A smart, simple and long-term solution",
+        "card_0": {
+            "title": "Contact us",
+            "description": "And enrich our ideas"
+        },
+        "card_1": {
+            "title": "Schedule a setup meeting",
+            "description": "Meet on Zoom or at a good cafe"
+        },
+        "card_2": {
+            "title": "Approve work plans",
+            "description": "And go ahead, to work."
         }
     }
 }

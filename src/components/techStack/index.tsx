@@ -1,7 +1,7 @@
 import { Box, styled } from '@mui/material';
-import { useTranslation } from 'react-i18next';
 import ConceptsList from './concepts';
 import TechCard from './TechCard';
+import { motion } from 'framer-motion';
 
 const TechStackContainer = styled(Box)(({
     display: 'flex',
@@ -14,7 +14,12 @@ const TechStack = () => {
         <TechStackContainer>
 
             {ConceptsList.map((c) => (
-                <TechCard item={c} />
+                <motion.div
+                    initial={{ y: -90, opacity: 0 }}
+                    whileInView={{ y: 0, x: 0, opacity: 1 }}
+                    transition={{ duration: 2 }}
+                    viewport={{ once: true }}
+                ><TechCard item={c} /></motion.div>
             ))}
 
         </TechStackContainer>
