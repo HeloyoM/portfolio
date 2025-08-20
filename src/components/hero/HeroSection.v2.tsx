@@ -1,18 +1,21 @@
 import { Box, Container, Typography, Button, Stack } from "@mui/material";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import { useTranslation } from "react-i18next";
+import HeroImage from '../../assets/hero-image.jpeg';
+import '../../App.css';
 
 export default function HeroSection() {
     const { t } = useTranslation();
 
     return (
         <Box
+            className="hero-bg"
             sx={{
-                bgcolor: "linear-gradient(135deg, #1976d2 0%, #42a5f5 100%)",
+                // bgcolor: "linear-gradient(135deg, #1976d2 0%, #42a5f5 100%)",
                 color: "white",
                 py: { xs: 8, md: 14 },
                 textAlign: "center",
-                backgroundImage: "url('https://source.unsplash.com/1600x900/?coding,computer')",
+                backgroundImage: ('../../assets/hero-image.jpeg'),
                 backgroundSize: "cover",
                 backgroundPosition: "center",
                 position: "relative",
