@@ -1,6 +1,8 @@
 {
     "hero": {
-        "title": "Wondering how to set up a new website?",
+        "header": "🚀 Learn • Build • Launch",
+        "title": "Start Your Coding Journey Today",
+        "sub_title": "A personalized learning plan – from basics to a full project – and learn how to choose an idea for a real app.",
         "description": "you'r not alone!",
         "button": "learn more",
         "bottom_line": "After a review here, you won't want to check anywhere else"
@@ -132,6 +134,39 @@
         "card_2": {
             "title": "Approve work plans",
             "description": "And go ahead, to work."
+        }
+    },
+    "pricing_plans": {
+        "header": "Learn to Code • Build Real Things",
+        "title": "Flexible plans for every stage",
+        "sub_title": "Clear outcomes, modern tools, and hands‑on guidance. Choose your path below.",
+        "comment": "Advanced topics like Docker/DevOps are optional and best for non‑beginners.",
+        "basic": {
+            "id": "basic_plan_id",
+            "title": "Basic",
+            "tagline": "Pay‑per‑lesson coaching",
+            "priceLabel": "₪ 110 / hour",
+            "duration": "50‑minute sessions",
+            "recommendedFor": "Perfect if you're just starting with coding.",
+            "cta": "Start a lesson"
+        },
+        "pro": {
+            "id": "pro_plan_id",
+            "title": "Professional",
+            "tagline": "Build a standard website together",
+            "priceLabel": "₪ 2,200 project price",
+            "duration": "Estimated 4–8 weeks (scope‑dependent)",
+            "recommendedFor": "You want a real web app from scratch, working side‑by‑side.",
+            "cta": "Build my website"
+        },
+        "premium": {
+            "id": "premium_plan_id",
+            "title": "Premium",
+            "tagline": "End‑to‑end application (web or desktop)",
+            "priceLabel": "Custom — contact for quote",
+            "duration": "Typical 6–10 weeks (end‑to‑end)",
+            "recommendedFor": "Launch a production‑ready app with guidance from setup to deployment.",
+            "cta": "Launch my app"
         }
     }
 }

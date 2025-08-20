@@ -1,5 +1,5 @@
 import { Box, Paper, styled, Typography } from '@mui/material'
-import HeroSection from '../hero/HeroSection'
+import HeroSection from '../hero/HeroSection.v2'
 import ProjectsList from '../projects/ProjectsList';
 import LoyaltyIcon from '@mui/icons-material/Loyalty';
 
@@ -10,6 +10,7 @@ import AnimatedArrows from '../techStack/AnimatedArrows';
 import ReactVsWordPress from '../techStack/ReactVsWordPress';
 import { motion } from 'framer-motion';
 import HIW from '../HowItWorks/HIW';
+import PricingPlans from '../PricingPlans';
 const DashboardSection = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(3),
     marginBottom: theme.spacing(2),
@@ -54,29 +55,30 @@ const Menu = () => {
 
             <HeroSection />
 
-            <DashboardSection id="projects">
+            {/* <DashboardSection id="projects">
                 <SectionTitleWithIcon variant="h5" mb={2}>
                     <Presentation />{t('projects.title')}
                 </SectionTitleWithIcon>
 
                 <ProjectsList />
-            </DashboardSection>
+            </DashboardSection> */}
 
 
-            <Box id="benefits">
+            <Box id="plans">
 
-                <TechStack />
+                {/* <TechStack /> */}
 
-                <Box>
+                <PricingPlans />
+                {/* <Box>
                     <Typography sx={{ border: '1px solid lightgrey', fontSize: '22px', m: 3, backgroundColor: 'cornflowerblue', color: 'white' }} >{t('benefits.offer.title')}</Typography>
 
                     <AnimatedArrows />
 
                     <ReactVsWordPress />
-                </Box>
+                </Box> */}
             </Box>
 
-            <HIW />
+            {/* <HIW /> */}
         </Box >
     )
 }
