@@ -122,18 +122,18 @@
     },
     "hit": {
         "chip": "How it works",
-        "title": "A smart, simple and long-term solution",
+        "title": "",
         "card_0": {
-            "title": "Contact us",
-            "description": "And enrich our ideas"
+            "title": "Confused?",
+            "description": "chose a plan by your own or give me a call"
         },
         "card_1": {
-            "title": "Schedule a setup meeting",
-            "description": "Meet on Zoom or at a good cafe"
+            "title": "",
+            "description": ""
         },
         "card_2": {
-            "title": "Approve work plans",
-            "description": "And go ahead, to work."
+            "title": "",
+            "description": ""
         }
     },
     "pricing_plans": {
@@ -168,5 +168,15 @@
             "recommendedFor": "Launch a production‑ready app with guidance from setup to deployment.",
             "cta": "Launch my app"
         }
+    },
+    "faceToFace": {
+        "title": "Frontal lessons",
+        "description": "I also offer face-to-face software development lessons. These sessions allow for a more interactive and personal learning experience compared to online classes.",
+        "address": "For the residents of Beit Shemesh and the surrounding area",
+        "cta": "Book a Meeting"
+    },
+    "breaking": {
+        "text": "Hey Beit-Shemesh residents! Book a face-to-face software development lesson today!",
+        "button": "Book Now"
     }
 }

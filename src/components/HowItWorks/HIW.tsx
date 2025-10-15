@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import StepCard from './StepCard'
 
 const NUM_STEPS = 3
+
 const HIW = () => {
     const { t } = useTranslation()
 

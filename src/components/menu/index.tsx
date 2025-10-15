@@ -11,6 +11,9 @@ import ReactVsWordPress from '../techStack/ReactVsWordPress';
 import { motion } from 'framer-motion';
 import HIW from '../HowItWorks/HIW';
 import PricingPlans from '../PricingPlans';
+import FaceToFace from '../face2face/FaceToFace';
+import Breaking from '../breaking';
+
 const DashboardSection = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(3),
     marginBottom: theme.spacing(2),
@@ -52,7 +55,8 @@ const Menu = () => {
                 px: 2,
             }}
         >
-
+            <Breaking />
+            
             <HeroSection />
 
             {/* <DashboardSection id="projects">
@@ -79,6 +83,8 @@ const Menu = () => {
             </Box>
 
             {/* <HIW /> */}
+
+            <FaceToFace />
         </Box >
     )
 }
