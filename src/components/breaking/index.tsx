@@ -51,6 +51,11 @@ const BookingButton = styled(Button)(({ theme }) => ({
 const Breaking = () => {
     const { t } = useTranslation();
 
+    const handleClick = () => {
+        let text = `פנייה%20מאתר%20לקביעת%20פגישה%20`
+        window.open(`https://wa.me/972587769313?text=${text}`, '_blank');
+    };
+
     return (
         <BannerContainer>
             <BannerText>{t('breaking.text')}</BannerText>
@@ -65,7 +70,7 @@ const Breaking = () => {
                     py: 1,
                     '&:hover': { backgroundColor: '#f0f0f0' },
                 }}
-                href='#face-to-face'
+                onClick={handleClick}
             >
                 {t('breaking.button')}
             </BookingButton >
