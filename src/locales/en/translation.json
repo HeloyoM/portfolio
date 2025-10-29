@@ -4,7 +4,10 @@
         "title": "Start Your Coding Journey Today",
         "sub_title": "A personalized learning plan – from basics to a full project – and learn how to choose an idea for a real app.",
         "description": "you'r not alone!",
-        "button": "learn more",
+        "buttons": {
+            "plans": "SHOW PLANS",
+            "syllabus": "SHOW SYLLABUS"
+        },
         "bottom_line": "After a review here, you won't want to check anywhere else"
     },
     "projects": {
@@ -178,5 +181,85 @@
     "breaking": {
         "text": "Hey Beit-Shemesh residents! Book a face-to-face software development lesson today!",
         "button": "Book Now"
+    },
+    "n8n": {
+        "text": "Coming soon. Course on developing automation tools to improve business capabilities"
+    },
+    "syllabus": {
+        "week_0": {
+            "topic": "Software Fundamentals – Introduction",
+            "content": "What is software, how does it work, workflow (Software Lifecycle)",
+            "exercise": "Writing a simple JS program to print text to the console"
+        },
+        "week_1": {
+            "topic": "Variables and Data Types",
+            "content": "Variables, data types (String, Number, Boolean), conditions and loops",
+            "exercise": "Exercises with conditions and loops in JS"
+        },
+        "week_2": {
+            "topic": "Basic Data Structures",
+            "content": "Arrays, lists, dictionaries, basic algorithms",
+            "exercise": "Creating arrays and dictionaries, search and sorting exercises"
+        },
+        "week_3": {
+            "topic": "Functions and Scope",
+            "content": "Functions, parameters, scope, callbacks",
+            "exercise": "Writing functions to manipulate arrays and strings"
+        },
+        "week_4": {
+            "topic": "Node.js Basics",
+            "content": "JS server environment, console, basic modules",
+            "exercise": "Creating a Node.js script to run basic logic"
+        },
+        "week_5": {
+            "topic": "Small Project",
+            "content": "Calculator or todo list in the browser",
+            "exercise": "Developing a small project with JS and HTML/CSS"
+        },
+        "week_6": {
+            "topic": "Frontend with React – Introduction",
+            "content": "Components, props, state, JSX",
+            "exercise": "Creating a basic component, text display and simple dynamics"
+        },
+        "week_7": {
+            "topic": "React – Hooks and Events",
+            "content": "useState, useEffect, events in components",
+            "exercise": "Adding interactivity to a basic React project"
+        },
+        "week_8": {
+            "topic": "React – Data Management",
+            "content": "Using API, Fetch, JSON, advanced state management",
+            "exercise": "Creating API calls and displaying data in a component"
+        },
+        "week_9": {
+            "topic": "Backend with Node.js and Express",
+            "content": "Creating REST API, CRUD, basic database",
+            "exercise": "Building a basic API with a database (MongoDB/MySQL)"
+        },
+        "week_10": {
+            "topic": "Basic Authentication",
+            "content": "JWT / Sessions, user permissions",
+            "exercise": "Adding login to the system, maintaining sessions"
+        },
+        "week_11": {
+            "topic": "Git and Version Control",
+            "content": "init, add, commit, push, pull, branch, GitHub",
+            "exercise": "Working with branches, pull requests, merges"
+        },
+        "week_12": {
+            "topic": "DevOps – Docker",
+            "content": "Containers, Dockerfile, Docker Compose",
+            "exercise": "Creating a basic Dockerfile and running an application in a container"
+        },
+        "week_13": {
+            "topic": "CI/CD Basics and Cloud Deployment",
+            "content": "GitHub Actions, basic deployment on AZURE",
+            "exercise": "Setting up a basic CI/CD workflow, deploying an application"
+        },
+        "week_14": {
+            "topic": "Final Project",
+            "content": "Full Stack application with React and Node.js, database, REST API, Docker deployment",
+            "exercise": "Complete application development using all learned tools and deployment"
+        }
     }
 }

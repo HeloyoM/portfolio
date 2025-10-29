@@ -1,18 +1,10 @@
 import { Box, Paper, styled, Typography } from '@mui/material'
 import HeroSection from '../hero/HeroSection.v2'
-import ProjectsList from '../projects/ProjectsList';
-import LoyaltyIcon from '@mui/icons-material/Loyalty';
-
-import { Presentation } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import TechStack from '../techStack';
-import AnimatedArrows from '../techStack/AnimatedArrows';
-import ReactVsWordPress from '../techStack/ReactVsWordPress';
-import { motion } from 'framer-motion';
-import HIW from '../HowItWorks/HIW';
 import PricingPlans from '../PricingPlans';
 import FaceToFace from '../face2face/FaceToFace';
 import Breaking from '../breaking';
+import Syllabus from '../syllabus/Syllabus';
 
 const DashboardSection = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(3),
@@ -45,7 +37,6 @@ const SectionTitleWithIcon = styled(SectionTitle)(({ theme }) => ({
 }));
 
 const Menu = () => {
-    const { t } = useTranslation();
 
     return (
         <Box
@@ -55,9 +46,26 @@ const Menu = () => {
                 px: 2,
             }}
         >
-            <Breaking />
-            
+            <Breaking
+                text='breaking.text'
+                btn='breaking.button'
+                style={{
+                    btn_bground: '#fff',
+                    btn_color: 'primary.main',
+                }} />
+
             <HeroSection />
+
+
+            <Breaking
+                text='n8n.text'
+                style={{
+                    color: 'black',
+                    background: 'linear-gradient(to right, #ffe0e3, #fff6f0)',
+                    btn_bground: '#fff',
+                }} />
+
+            <Syllabus />
 
             {/* <DashboardSection id="projects">
                 <SectionTitleWithIcon variant="h5" mb={2}>

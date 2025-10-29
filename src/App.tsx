@@ -1,7 +1,6 @@
+import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
 import './App.css';
 import Footer from './Footer';
-import { useTranslation } from 'react-i18next';
-import GuestContactUs from './locales/ContactUs';
 import LanguageToggleButton from './components/LanguageToggleButton';
 import WhatsappButton from './components/WhatsappButton';
 import Header from './components/header/Header';
@@ -9,21 +8,26 @@ import Menu from './components/menu';
 
 function App() {
 
-  const { t } = useTranslation();
-
   return (
-    <>
-      <Header />
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={
+          <>
+            <Header />
 
-      <Menu />
+            <Menu />
 
-      {/* <GuestContactUs /> */}
+            {/* <GuestContactUs /> */}
 
-      <Footer />
+            <Footer />
 
-      <LanguageToggleButton />
-      <WhatsappButton />
-    </>);
+            <LanguageToggleButton />
+            <WhatsappButton /></>
+        } />
+
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;

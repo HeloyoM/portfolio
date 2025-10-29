@@ -4,7 +4,10 @@
         "title": "התחילו את מסע פיתוח תוכנה שלכם עוד היום",
         "sub_title": "בחרו תוכנית לימוד מותאמת אישית – מהבסיס ועד פרויקט מלא –ולמדו איך להפוך רעיון לאפליקציה אמיתית.",
         "description": "!אתם לא לבד",
-        "button": "למדו עוד",
+        "buttons": {
+            "plans": "SHOW PLANS",
+            "syllabus": "SHOW SYLLABUS"
+        },
         "bottom_line": "אחרי סקירה כאן, לא תרצו לבדוק בשום מקום אחר"
     },
     "projects": {
@@ -177,5 +180,85 @@
     "breaking": {
         "text": "תושבי בית-שמש קבעו שיעורים פרונטליים עוד היום!",
         "button": "קבע עכשיו"
+    },
+    "n8n": {
+        "text": "בקרוב. קורס פיתוח כלי אוטומציה לשיפור יכולות עסקיות"
+    },
+    "syllabus": {
+        "week_0": {
+            "topic": "יסודות תוכנה – מבוא",
+            "content": "מהי תוכנה, איך היא פועלת, זרימת עבודה (Software Lifecycle)",
+            "exercise": "כתיבת תוכנית JS פשוטה להדפסת טקסט בקונסול"
+        },
+        "week_1": {
+            "topic": "משתנים וסוגי נתונים",
+            "content": "משתנים, סוגי נתונים (String, Number, Boolean), תנאים ולולאות",
+            "exercise": "תרגילי תנאים ולולאות ב-JS"
+        },
+        "week_2": {
+            "topic": "מבני נתונים בסיסיים",
+            "content": "מערכים, רשימות, אלגוריתמים בסיסיים",
+            "exercise": "יצירת מערכים, תרגילי חיפוש וסידור"
+        },
+        "week_3": {
+            "topic": "פונקציות והיקף משתנים",
+            "content": "פונקציות, פרמטרים, Scope, Callbacks",
+            "exercise": "כתיבת פונקציות למניפולציה של מערכים ומחרוזות"
+        },
+        "week_4": {
+            "topic": "Node.js בסיסי",
+            "content": "סביבת שרת JS, Console, Modules בסיסיים",
+            "exercise": "יצירת סקריפט Node.js להרצת לוגיקה בסיסית"
+        },
+        "week_5": {
+            "topic": "פרויקט קטן",
+            "content": "מחשבון או טודוליסט בדפדפן",
+            "exercise": "פיתוח פרויקט קטן עם JS ו-HTML/CSS"
+        },
+        "week_6": {
+            "topic": "Frontend עם React – מבוא",
+            "content": "קומפוננטות, Props, State, JSX",
+            "exercise": "יצירת קומפוננט בסיסי, תצוגת טקסט ודינמיקה"
+        },
+        "week_7": {
+            "topic": "React – Hooks ואירועים",
+            "content": "useState, useEffect, אירועים ברכיבים",
+            "exercise": "הוספת אינטראקטיביות לפרויקט React בסיסי"
+        },
+        "week_8": {
+            "topic": "React – ניהול נתונים",
+            "content": "שימוש ב-API, Fetch, JSON, ניהול State מתקדם",
+            "exercise": "יצירת קריאה ל-API חיצוני והצגת נתונים ברכיב"
+        },
+        "week_9": {
+            "topic": "Backend עם Node.js ו-Express",
+            "content": "יצירת REST API, CRUD, מסד נתונים בסיסי",
+            "exercise": "בניית API בסיסי עם מסד נתונים (MongoDB/MySQL)"
+        },
+        "week_10": {
+            "topic": "Authentication בסיסי",
+            "content": "JWT / Sessions, הרשאות משתמש",
+            "exercise": "הוספת התחברות למערכת, שמירת Session"
+        },
+        "week_11": {
+            "topic": "Git וניהול גרסאות",
+            "content": "init, add, commit, push, pull, branch, GitHub",
+            "exercise": "עבודה עם Branches, Pull Requests, Merge"
+        },
+        "week_12": {
+            "topic": "DevOps – Docker",
+            "content": "קונטיינר, Dockerfile, Docker Compose",
+            "exercise": "יצירת Dockerfile בסיסי והרצת אפליקציה בקונטיינר"
+        },
+        "week_13": {
+            "topic": "CI/CD בסיסי ופריסה בענן",
+            "content": "GitHub Actions, פריסה בסיסית ב-AZURE",
+            "exercise": "הקמת Workflow בסיסי ל-CI/CD, פריסת אפליקציה"
+        },
+        "week_14": {
+            "topic": "פרויקט סיום",
+            "content": "אפליקציה Full Stack עם React ו-Node.js, מסד נתונים, REST API, פריסה עם Docker",
+            "exercise": "פיתוח מלא של אפליקציה, שימוש בכלים שנלמדו, פריסת אפליקציה"
+        }
     }
 }

@@ -1,11 +1,14 @@
 import { Box, Container, Typography, Button, Stack } from "@mui/material";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import { useTranslation } from "react-i18next";
-import HeroImage from '../../assets/hero-image.jpeg';
 import '../../App.css';
+import { File } from 'lucide-react';
+import { useNavigate } from "react-router-dom";
 
 export default function HeroSection() {
     const { t } = useTranslation();
+
+    const navigate = useNavigate();
 
     return (
         <Box
@@ -67,8 +70,19 @@ export default function HeroSection() {
                         href="#plans"
                         endIcon={<RocketLaunchIcon />}
                     >
-                        צפו בתוכניות
+                        {t('hero.buttons.plans')}
                     </Button>
+
+                    <Button
+                        size="large"
+                        variant="contained"
+                        color="primary"
+                        onClick={() => navigate('/#syllabus')}
+                        endIcon={<File />}
+                    >
+                        {t('hero.buttons.syllabus')}
+                    </Button>
+
                 </Stack>
             </Container>
         </Box>

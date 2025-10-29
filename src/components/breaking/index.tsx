@@ -48,22 +48,37 @@ const BookingButton = styled(Button)(({ theme }) => ({
     },
 }));
 
-const Breaking = () => {
+type Props = {
+    text: string
+    btn?: string
+    style: {
+        color?: string,
+        background?: string,
+        btn_bground?: string
+        btn_color?: string
+    }
+}
+
+const Breaking = (props: Props) => {
     const { t } = useTranslation();
+    const breakText = props.text;
 
     const handleClick = () => {
         let text = `פנייה%20מאתר%20לקביעת%20פגישה%20`
         window.open(`https://wa.me/972587769313?text=${text}`, '_blank');
     };
 
+    let innterText = typeof t(breakText) === 'string' ? t(breakText) : breakText;
+    let innterButtonText = typeof t(props.btn!) === 'string' ? t(props.btn!) : props.btn;
+
     return (
-        <BannerContainer>
-            <BannerText>{t('breaking.text')}</BannerText>
-            <BookingButton
+        <BannerContainer sx={{ color: props.style.color, background: props.style.background }}>
+            <BannerText>{innterText}</BannerText>
+            {props.btn && <BookingButton
                 variant="contained"
                 sx={{
-                    backgroundColor: '#fff',
-                    color: 'primary.main',
+                    backgroundColor: props.style.btn_bground,
+                    color: props.style.btn_color,
                     fontWeight: 600,
                     borderRadius: 2,
                     px: 3,
@@ -72,8 +87,8 @@ const Breaking = () => {
                 }}
                 onClick={handleClick}
             >
-                {t('breaking.button')}
-            </BookingButton >
+                {innterButtonText}
+            </BookingButton >}
         </BannerContainer>
     )
 }

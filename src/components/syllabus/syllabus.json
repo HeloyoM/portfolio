@@ -1,0 +1,26 @@
+{
+    "syllabus": {
+        "week_1": {
+            "topic": "Software Fundamentals – Introduction",
+            "content": "What is software, how does it work, workflow (Software Lifecycle)",
+            "exercise": "Writing a simple JS program to print text to the console"
+        },
+        "week_2": {
+            "topic": "Variables and data types",
+            "content": "Variables, data types (String, Number, Boolean), conditions and loops",
+            "exercise": "JS conditionals and loops exercises"
+        },
+        "week_3": {
+            "topic": "Basic data structures",
+            "content": "Arrays, lists, dictionaries, basic algorithms",
+            "exercise": "Creating arrays and dictionaries, searching and sorting exercises"
+        },
+        "week_4": {
+            "topic": "Functions and scope of variables",
+            "content": "Arrays, lists, dictionaries, basic algorithms",
+            "exercise": "Creating arrays and dictionaries, searching and sorting exercises"
+        },
+        
+        
+    }
+}
